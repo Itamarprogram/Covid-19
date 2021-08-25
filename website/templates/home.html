@@ -1,77 +1,111 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<div style="background-color: #4a91ee; height: 100vh">
+  <div class="container h-100">
     <div class="row justify-content-center">
+      <div class="col-md-7 col-sm-12 col-xs-12 pt-5">
+        <div class="card border-0 p-3 shadow-sm text-center">
         
-        <form method ="POST">
-          <select dir="rtl" class="btn btn-info dropdown-toggle " aria-label="Default select example" name="reason_test">
-            <option dir="rtl" class="btn btn-secondary" style="text-align: right;" selected>סיבת הבדיקה</option>
-            <option dir="rtl" class="btn btn-secondary" value="Cultural and sporting events">אירועי תרבות וספורט</option>
-            <option dir="rtl" class="btn btn-secondary" value="Conferences and exhibitions">כנסים ותערוכות</option>
-            <option dir="rtl" class="btn btn-secondary" value="Hotels">בתי מלון</option>
-            <option dir="rtl" class="btn btn-secondary" value="Gyms and pools">חדרי כושר וסטודיו, בריכות וקאנטרי קלאב</option>
-            <option dir="rtl" class="btn btn-secondary" value="Synagogue">בתי תפילה מעל ל-50 איש</option>
-            <option dir="rtl" class="btn btn-secondary" value="Halls">אולמות וגני אירועים</option>
-            <option dir="rtl" class="btn btn-secondary" value="Festivals">פסטיבלים</option>
-            <option dir="rtl" class="btn btn-secondary" value="Restaurants">מסעדות, ברים חדרי אוכל ובתי קפה</option>
-            <option dir="rtl" class="btn btn-secondary" value="Museums">מוזיאונים וספריות</option>
-            <option dir="rtl" class="btn btn-secondary" value="Amusement parks">אטרקציות תיירותיות ופארקי שעשועים</option>
-            <option dir="rtl" class="btn btn-secondary" value="Universities">אוניברסיטאות ומוסדות להשכלה גבוהה</option>
-            <option dir="rtl" class="btn btn-secondary" value="Abroad">חוץ לארץ</option>
-            <option dir="rtl" class="btn btn-secondary" value="Exposed">חשיפה לחולה מאומת</option>
-          </select>
+          <form method ="POST">
+            <select dir="rtl" class="btn btn-info dropdown-toggle " aria-label="Default select example" name="reason_test"  data-live-search="true">
+              <option dir="rtl" class="btn btn-secondary" style="text-align: right;" selected>סיבת הבדיקה</option>
+              <option dir="rtl" class="btn btn-secondary" value="Cultural and sporting events">אירועי תרבות וספורט</option>
+              <option dir="rtl" class="btn btn-secondary" value="Conferences and exhibitions">כנסים ותערוכות</option>
+              <option dir="rtl" class="btn btn-secondary" value="Hotels">בתי מלון</option>
+              <option dir="rtl" class="btn btn-secondary" value="Gyms and pools">חדרי כושר וסטודיו, בריכות וקאנטרי קלאב</option>
+              <option dir="rtl" class="btn btn-secondary" value="Synagogue">בתי תפילה מעל ל-50 איש</option>
+              <option dir="rtl" class="btn btn-secondary" value="Halls">אולמות וגני אירועים</option>
+              <option dir="rtl" class="btn btn-secondary" value="Festivals">פסטיבלים</option>
+              <option dir="rtl" class="btn btn-secondary" value="Restaurants">מסעדות, ברים חדרי אוכל ובתי קפה</option>
+              <option dir="rtl" class="btn btn-secondary" value="Museums">מוזיאונים וספריות</option>
+              <option dir="rtl" class="btn btn-secondary" value="Amusement parks">אטרקציות תיירותיות ופארקי שעשועים</option>
+              <option dir="rtl" class="btn btn-secondary" value="Universities">אוניברסיטאות ומוסדות להשכלה גבוהה</option>
+              <option dir="rtl" class="btn btn-secondary" value="Abroad">חוץ לארץ</option>
+              <option dir="rtl" class="btn btn-secondary" value="Exposed">חשיפה לחולה מאומת</option>
+            </select>
 
-          <select dir="rtl" class="btn btn-info dropdown-toggle text-right " aria-label="Default select example" name="status_vac">
-            <option dir="rtl" class="btn btn-secondary" selected>סטטוס חיסוני</option>
-            <option dir="rtl" class="btn btn-secondary" value="vaccinated">מחוסן</option>
-            <option dir="rtl" class="btn btn-secondary" value="unvaccinated">לא מחוסן</option>
-            <option dir="rtl" class="btn btn-secondary" value="healed">מחלים</option>
-          </select>
+            <select dir="rtl" class="btn btn-info dropdown-toggle text-right " aria-label="Default select example" name="status_vac"  data-live-search="true"> 
+              <option dir="rtl" class="btn btn-secondary" selected>סטטוס חיסוני</option>
+              <option dir="rtl" class="btn btn-secondary" value="vaccinated">מחוסן</option>
+              <option dir="rtl" class="btn btn-secondary" value="unvaccinated">לא מחוסן</option>
+              <option dir="rtl" class="btn btn-secondary" value="healed">מחלים</option>
+            </select>
 
-          <select dir="rtl" class="btn btn-info" aria-label="Default select example" name="age">
-            <option class="btn btn-secondary" selected>גיל</option>
-            {% for i in range(110) %}
-              <option  dir="rtl" class="btn btn-secondary .text-right" value="{{i}}" >{{i}}</option>
-            {% endfor %}
-          </select>
-    </div>
-    <div class="text-center">
-      <button class="btn btn-primary align-center" type="submit" >בדוק</button>
-    </div>
+            <select dir="rtl" class="btn btn-info" aria-label="Default select example" name="age" data-live-search="true">
+              <option class="btn btn-secondary" selected>גיל</option>
+              {% for i in range(110) %}
+                <option  dir="rtl" class="btn btn-secondary .text-right" value="{{i}}" >{{i}}</option>
+              {% endfor %}
+            </select>
+
+            <div class="text-center">            
+              <br>
+              <button class="btn btn-primary align-center" type="submit" >בדוק</button>
+            </div>
+
     {% if exposed == True %}
       <div class="text-right"> נחשפת לחולה מאומת, עליך לבצע בדיקת 
         <span dir="ltr">PCR</span>
-        באחד ממתחמי הבדיקות ולהיכנס לבידוד. לעוד פרטים לחץ כאן
+        באחד ממתחמי הבדיקות ולהיכנס לבידוד. למידע נוסף לחץ 
+        <a href="https://corona.health.gov.il/calculator/" class="link-info"  target="_blank">כאן</a>
+        <a href="https://www.clalit.co.il/he/info/services/Pages/corona_test.aspx" class="link-info"  target="_blank"><span dir="ltr">PCR</span> בדיקת </a>
       </div>
     {% elif case_1 == True %}
     <div class="text-right">
-      אין צורך בבדיקת קורונה בגילאי 3 ומטה
+      אין צורך בבדיקת קורונה בגילאי 3 ומטה. למידע נוסף לחץ 
+      <a href="https://www.gov.il/he/departments/topics/corona-main-sub" class="link-info"  target="_blank">כאן</a>
     </div>
     {% elif case_2 == True %}
       <div class="text-right">
-        אין צורך בבדיקת קורונה למחוסנים או מחלימים
+         אין צורך בבדיקת קורונה למחוסנים או מחלימים. למידע נוסף לחץ
+         <a href="https://www.gov.il/he/departments/topics/corona-main-sub" class="link-info"  target="_blank">כאן</a>
       </div>
     {% elif case_3 == True %}
       <div class="text-right">
-        יש צורך בבדיקת קורונה מהירה, הבדיקה תקפה ל24 שעות והיא תעלה 52 שקלים
+        יש צורך בבדיקת קורונה מהירה, הבדיקה תקפה ל24 שעות והיא תעלה 52 שקלים. למידע נוסף לחץ 
+        <a href="https://www.gov.il/he/departments/topics/corona-main-sub" class="link-info" target="_blank">כאן</a>
+        <br>
+        <a href="https://govextra.gov.il/ministry-of-health/covid19-vaccine/home/?utm_source=go.gov.il&utm_medium=referral" class="link-info" target="_blank">מידע על חיסונים</a>
+        <br>
+        <a href="https://www.mdais.org/101/online-covid-test" class="link-info" target="_blank">בדיקות מהירות</a>
       </div>
     {% elif case_4 == True %}
     <div class="text-right">
-      יש צורך בבדיקת קורונה מהירה, הבדיקה תקפה ל24 שעות והיא בחינם
+      יש צורך בבדיקת קורונה מהירה, הבדיקה תקפה ל24 שעות והיא בחינם. למידע נוסף לחץ
+      <a href="https://www.gov.il/he/departments/topics/corona-main-sub" class="link-info"  target="_blank">כאן</a>
+      <br>
+      <a href="https://www.mdais.org/101/online-covid-test" class="link-info"  target="_blank">בדיקות מהירות</a>
     </div>
     {% elif case_5 == True %}
     <div class="text-right">
       יש צורך בבדיקת קורונה מסוג
       <span dir="ltr">PCR</span>
-      הבדיקה תקפה ל72 שעות והיא בחינם 
+       בדיקה תקפה ל72 שעות והיא בחינם. למידע נוסף לחץ
+       <a href="https://www.gov.il/he/departments/topics/corona-main-sub" class="link-info"  target="_blank">כאן</a>
+       <br>
+       <a href="https://www.clalit.co.il/he/info/services/Pages/corona_test.aspx" class="link-info"  target="_blank"><span dir="ltr">PCR</span> בדיקת </a>
     </div>
     {% elif case_6 == True %}
     <div class="text-right">
       יש צורך בבדיקת קורונה מסוג
       <span dir="ltr">PCR</span>
-      הבדיקה תקפה ל72 שעות והיא עולה כסף 
+      הבדיקה תקפה ל72 שעות והיא עולה כסף. למידע נוסף לחץ 
+      <a href="https://www.gov.il/he/departments/topics/corona-main-sub" class="link-info"  target="_blank">כאן</a>
+      <br>
+      <a href="https://www.clalit.co.il/he/info/services/Pages/corona_test.aspx" class="link-info"  target="_blank"><span dir="ltr">PCR</span> בדיקת </a>
     </div>
+    {% elif case_7 == True %}
+      <div class="text-right">
+        אנא מלא את כל הנתונים
+      </div>
     {% endif %}
   </form>
 
-{% endblock content %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}    
