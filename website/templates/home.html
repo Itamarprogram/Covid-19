@@ -1,45 +1,77 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div style="background-color: #f5f5f5; height: 100vh;">
-  <div class="container h-100">
     <div class="row justify-content-center">
         
         <form method ="POST">
-          <select class="btn btn-info dropdown-toggle " aria-label="Default select example" name="reason_test">
-            <option class="btn btn-secondary" style="text-align: right;" selected>סיבת הבדיקה</option>
-            <option class="btn btn-secondary" value="Cultural and sporting events">אירועי תרבות וספורט</option>
-            <option class="btn btn-secondary" value="Conferences and exhibitions">כנסים ותערוכות</option>
-            <option class="btn btn-secondary" value="Hotels">בתי מלון</option>
-            <option class="btn btn-secondary" value="Gyms and pools">בתי מלון</option>
-            <option class="btn btn-secondary" value="Synagogue">בתי תפילה מעל ל-50 איש</option>
-            <option class="btn btn-secondary" value="Halls">אולמות וגני אירועים</option>
-            <option class="btn btn-secondary" value="Festivals">פסטיבלים</option>
-            <option class="btn btn-secondary" value="Restaurants">מסעדות, ברים חדרי אוכל ובתי קפה</option>
-            <option class="btn btn-secondary" value="Museums">מוזיאונים וספריות</option>
-            <option class="btn btn-secondary" value="Amusement parks">אטרקציות תיירותיות ופארקי שעשועים</option>
-            <option class="btn btn-secondary" value="Universities">אוניברסיטאות ומוסדות להשכלה גבוהה</option>
+          <select dir="rtl" class="btn btn-info dropdown-toggle " aria-label="Default select example" name="reason_test">
+            <option dir="rtl" class="btn btn-secondary" style="text-align: right;" selected>סיבת הבדיקה</option>
+            <option dir="rtl" class="btn btn-secondary" value="Cultural and sporting events">אירועי תרבות וספורט</option>
+            <option dir="rtl" class="btn btn-secondary" value="Conferences and exhibitions">כנסים ותערוכות</option>
+            <option dir="rtl" class="btn btn-secondary" value="Hotels">בתי מלון</option>
+            <option dir="rtl" class="btn btn-secondary" value="Gyms and pools">חדרי כושר וסטודיו, בריכות וקאנטרי קלאב</option>
+            <option dir="rtl" class="btn btn-secondary" value="Synagogue">בתי תפילה מעל ל-50 איש</option>
+            <option dir="rtl" class="btn btn-secondary" value="Halls">אולמות וגני אירועים</option>
+            <option dir="rtl" class="btn btn-secondary" value="Festivals">פסטיבלים</option>
+            <option dir="rtl" class="btn btn-secondary" value="Restaurants">מסעדות, ברים חדרי אוכל ובתי קפה</option>
+            <option dir="rtl" class="btn btn-secondary" value="Museums">מוזיאונים וספריות</option>
+            <option dir="rtl" class="btn btn-secondary" value="Amusement parks">אטרקציות תיירותיות ופארקי שעשועים</option>
+            <option dir="rtl" class="btn btn-secondary" value="Universities">אוניברסיטאות ומוסדות להשכלה גבוהה</option>
+            <option dir="rtl" class="btn btn-secondary" value="Abroad">חוץ לארץ</option>
+            <option dir="rtl" class="btn btn-secondary" value="Exposed">חשיפה לחולה מאומת</option>
           </select>
 
-          <select class="btn btn-info dropdown-toggle text-right " aria-label="Default select example" name="status_vac">
-            <option class="btn btn-secondary" selected>סטטוס חיסוני</option>
-            <option class="btn btn-secondary" value="vaccinated">מחוסן</option>
-            <option class="btn btn-secondary" value="unvaccinated">לא מחוסן</option>
-            <option class="btn btn-secondary" value="healed">מחלים</option>
-            <option class="btn btn-secondary" value="Vaccine suppressants">מדוכאי חיסון</option>
+          <select dir="rtl" class="btn btn-info dropdown-toggle text-right " aria-label="Default select example" name="status_vac">
+            <option dir="rtl" class="btn btn-secondary" selected>סטטוס חיסוני</option>
+            <option dir="rtl" class="btn btn-secondary" value="vaccinated">מחוסן</option>
+            <option dir="rtl" class="btn btn-secondary" value="unvaccinated">לא מחוסן</option>
+            <option dir="rtl" class="btn btn-secondary" value="healed">מחלים</option>
           </select>
 
-          <select class="btn btn-info dropdown-toggle text-right " aria-label="Default select example" name="age">
+          <select dir="rtl" class="btn btn-info" aria-label="Default select example" name="age">
             <option class="btn btn-secondary" selected>גיל</option>
             {% for i in range(110) %}
-              <option class="btn btn-secondary" value="{{i}}">{{i}}</option>
+              <option  dir="rtl" class="btn btn-secondary .text-right" value="{{i}}" >{{i}}</option>
             {% endfor %}
           </select>
-        
     </div>
-    <button class="btn btn-primary" type="submit">Submit</button>
+    <div class="text-center">
+      <button class="btn btn-primary align-center" type="submit" >בדוק</button>
+    </div>
+    {% if exposed == True %}
+      <div class="text-right"> נחשפת לחולה מאומת, עליך לבצע בדיקת 
+        <span dir="ltr">PCR</span>
+        באחד ממתחמי הבדיקות ולהיכנס לבידוד. לעוד פרטים לחץ כאן
+      </div>
+    {% elif case_1 == True %}
+    <div class="text-right">
+      אין צורך בבדיקת קורונה בגילאי 3 ומטה
+    </div>
+    {% elif case_2 == True %}
+      <div class="text-right">
+        אין צורך בבדיקת קורונה למחוסנים או מחלימים
+      </div>
+    {% elif case_3 == True %}
+      <div class="text-right">
+        יש צורך בבדיקת קורונה מהירה, הבדיקה תקפה ל24 שעות והיא תעלה 52 שקלים
+      </div>
+    {% elif case_4 == True %}
+    <div class="text-right">
+      יש צורך בבדיקת קורונה מהירה, הבדיקה תקפה ל24 שעות והיא בחינם
+    </div>
+    {% elif case_5 == True %}
+    <div class="text-right">
+      יש צורך בבדיקת קורונה מסוג
+      <span dir="ltr">PCR</span>
+      הבדיקה תקפה ל72 שעות והיא בחינם 
+    </div>
+    {% elif case_6 == True %}
+    <div class="text-right">
+      יש צורך בבדיקת קורונה מסוג
+      <span dir="ltr">PCR</span>
+      הבדיקה תקפה ל72 שעות והיא עולה כסף 
+    </div>
+    {% endif %}
   </form>
-  </div>
-</div>
-{% endblock content %}
 
+{% endblock content %}
