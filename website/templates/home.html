@@ -1,8 +1,10 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div style="background-color: #4a91ee; height: 100vh">
-  <div class="container h-100">
+
+
+  <h1  style="text-align: center;"  ><span dir="ltr">!</span>מדריך הבדיקות המלא  </h1>
+  <div class="container h-200">
     <div class="row justify-content-center">
       <div class="col-md-7 col-sm-12 col-xs-12 pt-5">
         <div class="card border-0 p-3 shadow-sm text-center">
@@ -43,28 +45,37 @@
               <br>
               <button class="btn btn-primary align-center" type="submit" >בדוק</button>
             </div>
+            <br>
 
     {% if exposed == True %}
       <div class="text-right"> נחשפת לחולה מאומת, עליך לבצע בדיקת 
         <span dir="ltr">PCR</span>
-        באחד ממתחמי הבדיקות ולהיכנס לבידוד. למידע נוסף לחץ 
-        <a href="https://corona.health.gov.il/calculator/" class="link-info"  target="_blank">כאן</a>
+        באחד ממתחמי הבדיקות ולהיכנס לבידוד.
+         למידע נוסף  
+        <a href="https://corona.health.gov.il/calculator/" class="link-info"  target="_blank">לחץ כאן</a><br>
         <a href="https://www.clalit.co.il/he/info/services/Pages/corona_test.aspx" class="link-info"  target="_blank"><span dir="ltr">PCR</span> בדיקת </a>
       </div>
     {% elif case_1 == True %}
     <div class="text-right">
-      אין צורך בבדיקת קורונה בגילאי 3 ומטה. למידע נוסף לחץ 
-      <a href="https://www.gov.il/he/departments/topics/corona-main-sub" class="link-info"  target="_blank">כאן</a>
+      <span dir="ltr">.</span>אין צורך בבדיקת קורונה בגילאי 3 ומטה 
+      <br>
+       למידע נוסף  
+       
+      <a href="https://www.gov.il/he/departments/topics/corona-main-sub" class="link-info"  target="_blank">לחץ כאן</a>
     </div>
     {% elif case_2 == True %}
       <div class="text-right">
-         אין צורך בבדיקת קורונה למחוסנים או מחלימים. למידע נוסף לחץ
-         <a href="https://www.gov.il/he/departments/topics/corona-main-sub" class="link-info"  target="_blank">כאן</a>
+        <span dir="ltr">.</span>אין צורך בבדיקת קורונה למחוסנים או מחלימים
+         <br>
+          למידע נוסף 
+         <a href="https://www.gov.il/he/departments/topics/corona-main-sub" class="link-info"  target="_blank">לחץ כאן </a>
       </div>
     {% elif case_3 == True %}
       <div class="text-right">
-        יש צורך בבדיקת קורונה מהירה, הבדיקה תקפה ל24 שעות והיא תעלה 52 שקלים. למידע נוסף לחץ 
-        <a href="https://www.gov.il/he/departments/topics/corona-main-sub" class="link-info" target="_blank">כאן</a>
+        <span dir="ltr">.</span>יש צורך בבדיקת קורונה מהירה, הבדיקה תקפה ל24 שעות והיא תעלה 52 שקלים
+        <br>
+         למידע נוסף  
+        <a href="https://www.gov.il/he/departments/topics/corona-main-sub" class="link-info" target="_blank">לחץ כאן</a>
         <br>
         <a href="https://govextra.gov.il/ministry-of-health/covid19-vaccine/home/?utm_source=go.gov.il&utm_medium=referral" class="link-info" target="_blank">מידע על חיסונים</a>
         <br>
@@ -72,8 +83,9 @@
       </div>
     {% elif case_4 == True %}
     <div class="text-right">
-      יש צורך בבדיקת קורונה מהירה, הבדיקה תקפה ל24 שעות והיא בחינם. למידע נוסף לחץ
-      <a href="https://www.gov.il/he/departments/topics/corona-main-sub" class="link-info"  target="_blank">כאן</a>
+      <span dir="ltr">.</span>יש צורך בבדיקת קורונה מהירה, הבדיקה תקפה ל24 שעות והיא בחינם
+       למידע נוסף 
+      <a href="https://www.gov.il/he/departments/topics/corona-main-sub" class="link-info"  target="_blank">לחץ כאן</a>
       <br>
       <a href="https://www.mdais.org/101/online-covid-test" class="link-info"  target="_blank">בדיקות מהירות</a>
     </div>
@@ -81,8 +93,10 @@
     <div class="text-right">
       יש צורך בבדיקת קורונה מסוג
       <span dir="ltr">PCR</span>
-       בדיקה תקפה ל72 שעות והיא בחינם. למידע נוסף לחץ
-       <a href="https://www.gov.il/he/departments/topics/corona-main-sub" class="link-info"  target="_blank">כאן</a>
+      <span dir="ltr">.</span>בדיקה תקפה ל72 שעות והיא בחינם
+      <br>
+        למידע נוסף 
+       <a href="https://www.gov.il/he/departments/topics/corona-main-sub" class="link-info"  target="_blank">לחץ כאן</a>
        <br>
        <a href="https://www.clalit.co.il/he/info/services/Pages/corona_test.aspx" class="link-info"  target="_blank"><span dir="ltr">PCR</span> בדיקת </a>
     </div>
@@ -90,8 +104,10 @@
     <div class="text-right">
       יש צורך בבדיקת קורונה מסוג
       <span dir="ltr">PCR</span>
-      הבדיקה תקפה ל72 שעות והיא עולה כסף. למידע נוסף לחץ 
-      <a href="https://www.gov.il/he/departments/topics/corona-main-sub" class="link-info"  target="_blank">כאן</a>
+      <span dir="ltr">.</span>הבדיקה תקפה ל72 שעות והיא עולה כסף
+      <br>
+       למידע נוסף  
+      <a href="https://www.gov.il/he/departments/topics/corona-main-sub" class="link-info"  target="_blank">לחץ כאן</a>
       <br>
       <a href="https://www.clalit.co.il/he/info/services/Pages/corona_test.aspx" class="link-info"  target="_blank"><span dir="ltr">PCR</span> בדיקת </a>
     </div>
@@ -109,3 +125,4 @@
 </div>
 
 {% endblock content %}    
+
